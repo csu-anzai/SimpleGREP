@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="grepcmd.MatchFile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:grepcmd"
+             xmlns:locals="clr-namespace:grepcmd.EditHelper"
+             mc:Ignorable="d" Unloaded="UserControl_Unloaded">
+    <Grid SnapsToDevicePixels="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Rectangle Fill="#FFF0F0F0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="13" Height="13" Margin="1,1,0,0" Cursor="Hand" MouseDown="Rectangle_MouseDown"/>
+        <Rectangle Stroke="Black" Width="11" Height="11" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,0,0" Cursor="Hand" MouseDown="Rectangle_MouseDown"/>
+        <Line Stroke="Black" X1="4" X2="11" Y1="7.5" Y2="7.5" Cursor="Hand" MouseDown="Rectangle_MouseDown"/>
+        <Line Stroke="Black" X1="7.5" X2="7.5" Y1="4" Y2="11" x:Name="plussign" Cursor="Hand" MouseDown="Rectangle_MouseDown"/>
+        <locals:SelectableTextBlock HorizontalAlignment="Left" Margin="16,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF489748" Grid.ColumnSpan="2">
+            <Run x:Name="matchcnt">0</Run> matches in <Run x:Name="fileName" Foreground="#FF293CFF" TextDecorations="Underline" Cursor="Hand" MouseDown="FileName_MouseDown">C:\test.cpp</Run>
+        </locals:SelectableTextBlock>
+        <!--向后延伸部分-->
+        <Line Stroke="Black" X1="7.5" X2="7.5" Y1="14" Y2="83" x:Name="linev"></Line>
+        <Line Stroke="Black" X1="7.5" X2="13.5" Y1="82.3" Y2="89" x:Name="lines" SnapsToDevicePixels="True" StrokeThickness="0.5"></Line>
+        <Grid x:Name="expandtext">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75" MinWidth="75" MaxWidth="75"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</UserControl>
